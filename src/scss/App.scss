@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&family=Oswald:wght@400;600;700&family=Roboto+Condensed:wght@300;400&display=swap');
+@import 'resets';
+@import 'variables';
+@import 'mixins';
+
+// Global typography//
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  line-height: 2;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: capitalize;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  font-family: $headingFont;
+  color: $bcgColorPrimary;
+}
+strong {
+  font-family: $headingFont;
+  font-size: 0.9rem;
+  color: $bcgColorPrimary;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+body {
+  background-color: $bcgColorSecondary;
+}
+
+// end of typography //
+.nav--bar {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  font-family: $headingFont;
+  box-shadow: $lightBoxshadow;
+  padding: 0.6em 2em;
+  background-color: $bcgColorPrimary;
+  color: $textColor;
+  ul {
+    display: inline-flex;
+  }
+  li {
+    padding: 0 1em;
+  }
+  a {
+    color: $textColor;
+    &:hover {
+      border-bottom: 2px solid red;
+      transition: $transitionIn;
+    }
+  }
+  .active {
+    border-bottom: 2px solid red;
+  }
+}
+.nav--bar p {
+  font-size: 2rem;
+}
+
+.preloader--container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: $bcgColorSecondary;
+}
+.homepage--content--container {
+  padding: 4em 1em;
+}
+
+.news--section--container {
+  padding-top: 8em;
+  height: 100%;
+  padding-inline: 2em;
+  @include mainContainer;
+  @media screen and (min-width: 500px) {
+    padding-inline: 5em;
+  }
+}
+.news--section--container p {
+  font-family: $textFont;
+  color: $primaryTextColor;
+}
+.news--content {
+  margin: 0.5em 0;
+}
+
+.news--content--image {
+  border-radius: 5px;
+  width: 100px;
+}
+.news--content--description {
+}
+.news--content--footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 0;
+}
+.news--content--provider,
+.date--published {
+  font-size: 0.7rem;
+  color: rgb(18, 18, 18);
+}
+.more--news--link {
+  color: blue;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.news--content--provider--logo {
+  width: 35px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+// **************** //////////
+
+.league--section--container {
+  padding-top: 8em;
+  padding-inline: 2em;
+  @media screen and (min-width: 500px) {
+    padding-inline: 5em;
+  }
+}
+label {
+  display: block;
+  font-family: $headingFont;
+}
+
+select {
+  padding: 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    border: 1px solid red;
+  }
+}
+.league--section {
+  @include mainContainer;
+  padding-top: 2em;
+  a {
+    color: black !important;
+  }
+}
+
+.league--information--box {
+  box-shadow: $lightBoxshadow;
+  padding: 0.5em 1em;
+  &:hover {
+    box-shadow: $darkBoxshadow;
+    transition: $transitionIn;
+  }
+}
+.league--section--logo {
+  width: 50px;
+}
+.league--cup--type {
+  font-family: $textFont;
+  color: $primaryTextColor;
+  font-size: 0.8rem;
+}
+.standing {
+  padding-top: 7em;
+  padding-inline: 2em;
+  @media screen and (min-width: 900px) {
+    padding-inline: 5em;
+  }
+}
+.league--standing--country--info {
+  display: inline-flex;
+  img {
+    width: 50px;
+    margin-left: 0.5em;
+  }
+}
+.league--standing--club--info {
+  img {
+    width: 50px;
+    margin-left: 0.5em;
+  }
+}
+.team--logo {
+  width: 15px;
+  margin-right: 5px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2em 0;
+}
+th {
+  background-color: $bcgColorPrimary;
+  color: $textColor;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px 4px;
+  font-family: $textFont;
+  font-size: 0.6rem;
+  @media screen and (min-width: 510px) {
+    font-size: 1rem;
+  }
+}
+.league--standing--team--name {
+  a {
+    color: black;
+  }
+}
+tr:hover {
+  background-color: $bcgColorPrimary;
+  color: red;
+  transition: $transitionIn;
+  cursor: pointer;
+  a {
+    color: red;
+    text-decoration: underline;
+  }
+}
+.scorer--logo {
+  width: 15px;
+  margin-right: 5px;
+}
+.topscorer--team {
+  color: $primaryTextColor;
+}
+// *********** ///////
+.single--team--container {
+  padding-top: 10em;
+  padding-inline: 2em;
+}
+.single--team--content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5em;
+}
+.location--icon {
+  color: red;
+}
+.single--team--stadium--image {
+  margin: 1em 0;
+  border-radius: 10px;
+  max-width: 100%;
+  box-shadow: $lightBoxshadow;
+}
+
+dt {
+  font-size: 1rem;
+  font-family: $headingFont;
+  margin-bottom: 0.4em;
+  color: $bcgColorPrimary;
+}
+dd {
+  font-family: $textFont;
+  color: $primaryTextColor;
+  font-size: 0.8rem;
+}
+.single--team--form {
+  display: flex;
+  flex-wrap: wrap;
+  drop-shadow: $lightBoxshadow;
+  p {
+    margin: 0.1em;
+  }
+}
+// ********************////////////////////
+.team--player--heading {
+  margin-bottom: 0.2em;
+}
+.team--players {
+  a {
+    color: $primaryTextColor;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.single--player--container {
+  padding-top: 8em;
+  padding-inline: 1.5em;
+  article {
+    box-shadow: $lightBoxshadow;
+    background-color: white;
+    padding: 0.5em;
+    div {
+      display: flex;
+      img {
+        width: 25px;
+      }
+    }
+  }
+  .player--image {
+    box-shadow: $lightBoxshadow;
+    border-radius: 5px;
+  }
+  span {
+    font-family: $textFont;
+    color: $primaryTextColor;
+    font-size: 0.8rem;
+  }
+}
+
+.player--stats {
+  display: grid;
+  place-items: center;
+  section {
+    width: 250px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgb(255, 0, 0);
+    padding: 1em;
+    .right--icon {
+      position: absolute;
+      right: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .left--icon {
+      cursor: pointer;
+      position: absolute;
+      left: 10px;
+      font-size: 1.2rem;
+    }
+    @media screen and (min-width: 550px) {
+      width: 400px;
+    }
+  }
+}
+.player--league--stats {
+  margin-top: 2em;
+  text-align: center;
+  font-family: $headingFont;
+  font-size: 1.3rem;
+  color: $bcgColorPrimary;
+}
+
+footer {
+  width: 100%;
+  background-color: $bcgColorPrimary;
+  color: $textColor;
+  text-align: center;
+}

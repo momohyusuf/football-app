@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import SharedLayout from './Components/SharedLayout';
+import Homepage from './Pages/Homepage';
+import News from './Pages/News';
+import Leagues from './Pages/Leagues';
+import Players from './Pages/Players';
+import Standings from './Pages/Standings';
+import SingleTeam from './Pages/SingleTeam';
+import SinglePlayers from './Pages/SinglePlayers';
+import Error from './Pages/Error';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Homepage />} />
+        <Route path="news" element={<News />} />
+        <Route path="leagues" element={<Leagues />} />
+        <Route path="players" element={<Players />} />
+
+        <Route path="leagues/:standingId" element={<Standings />} />
+
+        <Route path="leagues/:standingId/:teamsId" element={<SingleTeam />} />
+
+        <Route
+          path="leagues/:standingId/:teamsId/:playerId"
+          element={<SinglePlayers />}
+        />
+
+        <Route path="*" element={<Error />} />
+      </Route>
+    </Routes>
   );
 }
 
