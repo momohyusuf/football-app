@@ -56,10 +56,11 @@ function Fixtures() {
                 </div>
                 <div className="fixtures--league--logo">
                   <img src={fixtures.league.logo} alt="" />
+                  <Link to={`/leagues/${fixtures.league.id}`}>
+                    <p>{fixtures.league.name}</p>
+                  </Link>
                 </div>
-                <Link to={`/leagues/${fixtures.league.id}`}>
-                  <p>{fixtures.league.name}</p>
-                </Link>
+
                 <div className="fixtures--playing--team--container">
                   <div className="fixture--game--time">
                     <small>{moment(fixtures.fixture.date).calendar()}</small>
