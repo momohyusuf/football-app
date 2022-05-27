@@ -6,3 +6,8 @@
   gap: 2em;
   background-color: $bcgColorSecondary;
 }
+
+@mixin flexItems {
+  display: flex;
+  align-items: center;
+}

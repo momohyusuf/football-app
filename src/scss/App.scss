@@ -105,15 +105,13 @@ body {
   background-color: $bcgColorSecondary;
 }
 .homepage--content--container {
-  padding: 4em 1em;
+  padding-top: 6em;
 }
-
 .news--section--container {
-  padding-top: 8em;
   height: 100%;
   padding-inline: 2em;
   @include mainContainer;
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 800px) {
     padding-inline: 5em;
   }
 }
@@ -334,9 +332,13 @@ dd {
       }
     }
   }
+
   .player--image {
+    margin: 1em auto;
+
     box-shadow: $lightBoxshadow;
     border-radius: 5px;
+    width: 250px;
   }
   span {
     font-family: $textFont;
@@ -380,8 +382,61 @@ dd {
   color: $bcgColorPrimary;
 }
 
+// //////////////
+.fixtures--section--container {
+  padding-top: 10em;
+  font-family: $listTextFont;
+}
+.fixtures--header {
+  @include flexItems;
+  margin-top: 0.5em;
+  padding-left: 0.4em;
+  img {
+    width: 15px;
+    border-radius: 50%;
+    margin-right: 0.3em;
+  }
+}
+.fixtures--league--logo {
+  @include flexItems;
+  padding-left: 0.4em;
+  img {
+    width: 15px;
+    margin-right: 0.3em;
+  }
+}
+.fixtures--playing--team--container {
+  @include flexItems;
+  margin: 0.2em 0;
+  border: 1px solid rgb(122, 122, 122);
+  width: 100%px;
+  small {
+    font-size: 0.6rem;
+    color: rgb(162, 162, 162);
+    margin-right: 0.3em;
+    padding-left: 0.4em;
+  }
+  @media screen and (min-width: 620px) {
+    small {
+      font-size: 0.8rem;
+    }
+    width: 500px;
+  }
+  .fixtures--team--container {
+    width: 300px;
+    color: rgb(93, 93, 93);
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (min-width: 500px) {
+      width: 400px;
+    }
+  }
+}
+
 footer {
   width: 100%;
+  padding: 2em 0;
   background-color: $bcgColorPrimary;
   color: $textColor;
   text-align: center;

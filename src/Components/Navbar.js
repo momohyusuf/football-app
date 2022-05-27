@@ -15,6 +15,9 @@ function Navbar() {
         <li>
           <NavLink to="leagues">Leagues</NavLink>
         </li>
+        <li>
+          <NavLink to="Fixtures">Fixtures</NavLink>
+        </li>
       </ul>
     </nav>
   );

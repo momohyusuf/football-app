@@ -55,6 +55,10 @@ export const footballInfoApi = createApi({
       query: ({ season, id }) =>
         createRequest(`/v3/players/?id=${id}&season=${season}`),
     }),
+
+    getFixtures: builder.query({
+      query: (date) => createRequest(`/v3/fixtures?date=${date}`),
+    }),
   }),
 });
 
@@ -68,4 +72,5 @@ export const {
   useGetTeamStatisticsQuery,
   useGetTeamSquadQuery,
   useGetTeamPlayersQuery,
+  useGetFixturesQuery,
 } = footballInfoApi;

@@ -8,6 +8,7 @@ import Standings from './Pages/Standings';
 import SingleTeam from './Pages/SingleTeam';
 import SinglePlayers from './Pages/SinglePlayers';
 import Error from './Pages/Error';
+import Fixtures from './Pages/Fixtures';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="news" element={<News />} />
         <Route path="leagues" element={<Leagues />} />
         <Route path="players" element={<Players />} />
-
+        <Route path="fixtures" element={<Fixtures />} />
         <Route path="leagues/:standingId" element={<Standings />} />
 
         <Route path="leagues/:standingId/:teamsId" element={<SingleTeam />} />

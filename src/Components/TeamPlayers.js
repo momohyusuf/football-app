@@ -5,11 +5,11 @@ import { useGetTeamSquadQuery } from '../services/footballInfoApi';
 function TeamPlayers({ season, iDs }) {
   const team = parseInt(iDs.teamsId);
   const { data, isLoading } = useGetTeamSquadQuery(team);
-
+  console.log(data);
   return (
     <div className="team--players">
       <h4 className="team--players--heading">Team Players</h4>
-      {data?.response[0].players.map((player) => {
+      {data?.response[0]?.players.map((player) => {
         return (
           <Link to={`${player.id}`} key={player.id}>
             <p>{player.name}</p>

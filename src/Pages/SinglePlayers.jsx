@@ -23,7 +23,9 @@ function SinglePlayers() {
   return (
     <div className="single--player--container">
       <article>
-        <img className="player--image" src={player.photo} alt="" />
+        <div className="player--image--container">
+          <img className="player--image" src={player.photo} alt={player.name} />
+        </div>
         <p>
           <strong>Player name:</strong> <span> {player.name}</span>
         </p>
@@ -94,7 +96,10 @@ function SinglePlayers() {
               <dd>Position: {statistics[value].games.position}</dd>
               <dd>Appearance: {statistics[value].games.appearences}</dd>
               <dd>Minuties: {statistics[value].games.minutes}</dd>
-              <dd>Average Rating: {statistics[value].games.rating}</dd>
+              <dd>
+                Average Rating:{' '}
+                {parseInt(statistics[value].games.rating).toFixed(1)}
+              </dd>
               <dt>Goals</dt>
               <dd>Scored: {statistics[value].goals.total}</dd>
               <dd>Conceded: {statistics[value].goals.conceded}</dd>
