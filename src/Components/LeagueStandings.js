@@ -15,7 +15,13 @@ function LeagueStandings({ season, id }) {
     );
   }
   const { response } = data;
-  if (response.length === 0) return 'no record available at the moment';
+  if (response.length === 0) {
+    return (
+      <h3 className="single--player--container">
+        Sorry no information available
+      </h3>
+    );
+  }
 
   return (
     <section className="league--standing--section">

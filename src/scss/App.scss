@@ -74,14 +74,14 @@ body {
   width: 100%;
   font-family: $headingFont;
   box-shadow: $lightBoxshadow;
-  padding: 0.6em 2em;
+  padding: 0.6em 1.5em;
   background-color: $bcgColorPrimary;
   color: $textColor;
   ul {
     display: inline-flex;
   }
   li {
-    padding: 0 1em;
+    padding: 0 0.5em;
   }
   a {
     color: $textColor;
@@ -109,7 +109,8 @@ body {
 }
 .news--section--container {
   height: 100%;
-  padding-inline: 2em;
+  padding-top: 7em !important;
+  padding-inline: 1em;
   @include mainContainer;
   @media screen and (min-width: 800px) {
     padding-inline: 5em;
@@ -126,8 +127,6 @@ body {
 .news--content--image {
   border-radius: 5px;
   width: 100px;
-}
-.news--content--description {
 }
 .news--content--footer {
   display: flex;
@@ -385,6 +384,7 @@ dd {
 // //////////////
 .fixtures--section--container {
   padding-top: 10em;
+  padding-inline: 1.5em;
   font-family: $listTextFont;
 }
 .fixtures--header {
@@ -408,23 +408,28 @@ dd {
 }
 .fixtures--playing--team--container {
   @include flexItems;
-  margin: 0.2em 0;
-  border: 1px solid rgb(122, 122, 122);
-  width: 100%px;
+  margin: 0.2em;
+  border: 1px solid rgb(175, 175, 175);
+  width: 100%;
+  border-radius: 5px;
+  .fixture--game--time {
+    display: flex;
+    flex-direction: column;
+  }
   small {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     color: rgb(162, 162, 162);
     margin-right: 0.3em;
     padding-left: 0.4em;
   }
   @media screen and (min-width: 620px) {
     small {
-      font-size: 0.8rem;
+      font-size: 0.6rem;
     }
     width: 500px;
   }
   .fixtures--team--container {
-    width: 300px;
+    min-width: 270px;
     color: rgb(93, 93, 93);
     display: flex;
     justify-content: space-between;
@@ -434,7 +439,146 @@ dd {
     }
   }
 }
+// ////////
+.single--fixture--container {
+  padding-top: 7em;
+  margin: 0 1.5em;
+}
+.single--fixture--nav {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+  li {
+    padding: 0 1em;
+    cursor: pointer;
+    font-family: $headingFont;
+    color: $bcgColorPrimary;
+    letter-spacing: 0.1em;
+    &:hover {
+      border-bottom: 2px solid red;
+      transition: $transitionIn;
+    }
+  }
+  .active--fixture--btn {
+    border-bottom: 2px solid red;
+  }
+  margin-top: 0.3em;
+  border-bottom: 1px solid $bcgColorPrimary;
+}
+.details--header {
+  @include flexItems;
+  justify-content: center;
+  font-family: $textFont;
+  font-size: 0.8rem;
+  img {
+    width: 50px;
+    margin-right: 0.4em;
+  }
+}
 
+.details--teams--update {
+  .teams--name {
+    font-family: $textFont;
+    color: $primaryTextColor;
+    text-align: center;
+    margin: 0.5em 0;
+  }
+  .details--team--logo--container {
+    @include flexItems;
+    justify-content: center;
+
+    img {
+      max-width: 100px;
+    }
+    .details--scores {
+      margin: 0 1em;
+      text-align: center;
+      font-family: $listTextFont;
+      color: rgb(132, 132, 132);
+    }
+  }
+  .match--time {
+    text-align: center;
+    color: $primaryTextColor;
+    font-family: $textFont;
+    font-size: 0.8rem;
+    margin: 1em 0;
+  }
+}
+.match--referee {
+  font-family: $headingFont;
+  color: $bcgColorPrimary;
+  margin: 0.5em 0;
+}
+.events {
+  p {
+    font-family: $textFont;
+  }
+  article {
+    margin: 0.3em 0;
+  }
+  small {
+    font-family: $textFont;
+    color: rgb(136, 136, 136);
+  }
+}
+.event--time {
+  font-family: $listTextFont;
+  color: rgb(136, 136, 136);
+}
+.event--type {
+  font-family: $textFont;
+}
+.teams--lineup {
+  display: grid;
+
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+.teams--lineup--header {
+  img {
+    max-width: 100px;
+  }
+  text-align: center;
+  margin: 1em 0;
+}
+.team--lineup--coach {
+  font-family: $textFont;
+  text-align: center;
+  margin-bottom: 1em;
+  img {
+    max-width: 80px;
+    border-radius: 5px;
+  }
+  small {
+    color: rgb(123, 123, 123);
+  }
+}
+.team--starting--xi,
+.team--substitutes {
+  p {
+    margin: 0.5em 0;
+    font-size: 0.8rem;
+    font-family: $listTextFont;
+  }
+}
+// ///////
+.stats--container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 120px 120px 120px;
+
+  h5 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    line-height: 1.5;
+    font-family: $listTextFont;
+    color: rgb(105, 105, 105);
+  }
+}
 footer {
   width: 100%;
   padding: 2em 0;

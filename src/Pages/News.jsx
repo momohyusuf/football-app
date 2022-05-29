@@ -13,11 +13,10 @@ function News() {
       </div>
     );
   }
-  const { value } = data;
 
   return (
     <section className="news--section--container">
-      {value.map((news, index) => (
+      {data?.value.map((news, index) => (
         <article key={index} className="news--content">
           <img
             className="news--content--image"

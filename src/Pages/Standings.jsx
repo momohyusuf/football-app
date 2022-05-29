@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useGetFootballSeasonsQuery } from '../services/footballInfoApi';
 import LeagueStandings from '../Components/LeagueStandings';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateSeason } from '../features/seasons/seasonSlice';
 
 function Standings() {

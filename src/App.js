@@ -3,12 +3,12 @@ import SharedLayout from './Components/SharedLayout';
 import Homepage from './Pages/Homepage';
 import News from './Pages/News';
 import Leagues from './Pages/Leagues';
-import Players from './Pages/Players';
 import Standings from './Pages/Standings';
 import SingleTeam from './Pages/SingleTeam';
 import SinglePlayers from './Pages/SinglePlayers';
 import Error from './Pages/Error';
 import Fixtures from './Pages/Fixtures';
+import SingleFixture from './Pages/SingleFixture';
 
 function App() {
   return (
@@ -17,16 +17,14 @@ function App() {
         <Route index element={<Homepage />} />
         <Route path="news" element={<News />} />
         <Route path="leagues" element={<Leagues />} />
-        <Route path="players" element={<Players />} />
         <Route path="fixtures" element={<Fixtures />} />
         <Route path="leagues/:standingId" element={<Standings />} />
-
         <Route path="leagues/:standingId/:teamsId" element={<SingleTeam />} />
-
         <Route
           path="leagues/:standingId/:teamsId/:playerId"
           element={<SinglePlayers />}
         />
+        <Route path="fixtures/:fixtureId" element={<SingleFixture />} />
 
         <Route path="*" element={<Error />} />
       </Route>

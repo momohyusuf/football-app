@@ -2,10 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGetTeamSquadQuery } from '../services/footballInfoApi';
 
-function TeamPlayers({ season, iDs }) {
+function TeamPlayers({ iDs }) {
   const team = parseInt(iDs.teamsId);
-  const { data, isLoading } = useGetTeamSquadQuery(team);
-  console.log(data);
+  const { data } = useGetTeamSquadQuery(team);
   return (
     <div className="team--players">
       <h4 className="team--players--heading">Team Players</h4>

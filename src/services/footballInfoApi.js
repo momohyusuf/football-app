@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const headersRequest = {
   'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-  'X-RapidAPI-Key': 'c7e4f03fd0msh0675d167de2b9a4p1d8397jsn65da7e6f70d3',
+  'X-RapidAPI-Key': process.env.REACT_APP_SECRET_KEY,
 };
 
 const createRequest = (url) => ({
@@ -59,6 +59,10 @@ export const footballInfoApi = createApi({
     getFixtures: builder.query({
       query: (date) => createRequest(`/v3/fixtures?date=${date}`),
     }),
+
+    getSingleFixture: builder.query({
+      query: (id) => createRequest(`/v3/fixtures?id=${id}`),
+    }),
   }),
 });
 
@@ -73,4 +77,5 @@ export const {
   useGetTeamSquadQuery,
   useGetTeamPlayersQuery,
   useGetFixturesQuery,
+  useGetSingleFixtureQuery,
 } = footballInfoApi;

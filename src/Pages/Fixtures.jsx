@@ -27,7 +27,7 @@ function Fixtures() {
       </div>
     );
   }
-  const teams = [...new Set(data?.response)];
+
   return (
     <section className="fixtures--section--container">
       <input
@@ -39,31 +39,38 @@ function Fixtures() {
       />
 
       <article>
-        {teams.map((fixtures) => {
-          console.log(fixtures);
+        {data?.response.map((fixtures) => {
           return (
-            <>
-              <div key={fixtures.fixture.id}>
-                <div className="fixtures--header">
-                  <img
-                    src={
-                      fixtures.league.flag ||
-                      'https://logos-download.com/wp-content/uploads/2017/11/FIFA_logo_colored.png'
-                    }
-                    alt=""
-                  />
-                  <p>{fixtures.league.country}</p>
-                </div>
-                <div className="fixtures--league--logo">
-                  <img src={fixtures.league.logo} alt="" />
-                  <Link to={`/leagues/${fixtures.league.id}`}>
-                    <p>{fixtures.league.name}</p>
-                  </Link>
-                </div>
+            <div key={fixtures.fixture.id}>
+              <div className="fixtures--header">
+                <img
+                  src={
+                    fixtures.league.flag ||
+                    'https://logos-download.com/wp-content/uploads/2017/11/FIFA_logo_colored.png'
+                  }
+                  alt=""
+                />
+                <p>{fixtures.league.country}</p>
+              </div>
+              <div className="fixtures--league--logo">
+                <img src={fixtures.league.logo} alt="" />
+                <Link to={`/leagues/${fixtures.league.id}`}>
+                  <p>{fixtures.league.name}</p>
+                </Link>
+              </div>
 
+              <Link to={`${fixtures.fixture.id}`}>
                 <div className="fixtures--playing--team--container">
                   <div className="fixture--game--time">
-                    <small>{moment(fixtures.fixture.date).calendar()}</small>
+                    <small>
+                      {new Date(fixtures.fixture.date).toLocaleDateString()}
+                    </small>{' '}
+                    <small>
+                      {moment(fixtures.fixture.date).format('h:mm a')}
+                    </small>
+                    <small style={{ color: 'red' }}>
+                      {fixtures.fixture.status.elapsed}
+                    </small>
                   </div>
                   <section>
                     <div className="fixtures--team--container">
@@ -80,8 +87,8 @@ function Fixtures() {
                     </div>
                   </section>
                 </div>
-              </div>
-            </>
+              </Link>
+            </div>
           );
         })}
       </article>

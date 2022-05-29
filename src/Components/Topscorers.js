@@ -3,9 +3,8 @@ import { useGetTopScorersQuery } from '../services/footballInfoApi';
 import { Link } from 'react-router-dom';
 
 function Topscorers({ season, id }) {
-  const { isLoading, data } = useGetTopScorersQuery({ season, id });
+  const { data } = useGetTopScorersQuery({ season, id });
 
-  console.log(data);
   return (
     <div>
       <h2>Top Scorers and assists</h2>

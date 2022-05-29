@@ -1,6 +1,5 @@
 @mixin mainContainer {
-  padding-top: 10em;
-
+  padding-top: 3em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2em;

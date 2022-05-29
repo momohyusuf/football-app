@@ -19,7 +19,15 @@ function SinglePlayers() {
       </div>
     );
   }
+  if (data?.response.length === 0) {
+    return (
+      <h3 className="single--player--container">
+        Sorry no player bio-data available
+      </h3>
+    );
+  }
   const { player, statistics } = data?.response[0];
+
   return (
     <div className="single--player--container">
       <article>
@@ -39,6 +47,7 @@ function SinglePlayers() {
           <strong>Nationality: </strong>
           <span> {player.nationality}</span>
         </p>
+
         <div>
           <p>
             {' '}
@@ -59,6 +68,10 @@ function SinglePlayers() {
         </p>
         <p>
           <strong>Weight:</strong> <span>{player.weight}</span>
+        </p>
+        <p>
+          <strong>Season:</strong>
+          <span> {statistics[value].league.season}</span>
         </p>
 
         {/* ????????? */}
