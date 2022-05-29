@@ -384,6 +384,21 @@ dd {
   padding-top: 10em;
   padding-inline: 1.5em;
   font-family: $listTextFont;
+  input {
+    padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+    &:hover {
+      outline: 2px solid $bcgColorPrimary;
+      transition: $transitionIn;
+    }
+  }
+  input[type='text'] {
+    width: 80%;
+    @media screen and (min-width: 620px) {
+      width: 300px;
+    }
+  }
 }
 .fixtures--header {
   @include flexItems;
