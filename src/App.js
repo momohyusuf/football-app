@@ -9,6 +9,7 @@ import SinglePlayers from './Pages/SinglePlayers';
 import Error from './Pages/Error';
 import Fixtures from './Pages/Fixtures';
 import SingleFixture from './Pages/SingleFixture';
+import SingleCoach from './Pages/SingleCoach';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           element={<SinglePlayers />}
         />
         <Route path="fixtures/:fixtureId" element={<SingleFixture />} />
+        <Route path="fixtures/:fixtureId/:teamId" element={<SingleCoach />} />
 
         <Route path="*" element={<Error />} />
       </Route>

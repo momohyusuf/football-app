@@ -27,7 +27,6 @@ function Fixtures() {
   }
 
   const trying = searchField || data?.response;
-  console.log(trying);
 
   function handleInput(e) {
     e.preventDefault();
@@ -97,6 +96,7 @@ function Fixtures() {
                         {fixtures.fixture.status.elapsed}
                       </small>
                     </div>
+
                     <section>
                       <div className="fixtures--team--container">
                         <span className="team">

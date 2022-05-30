@@ -63,6 +63,18 @@ export const footballInfoApi = createApi({
     getSingleFixture: builder.query({
       query: (id) => createRequest(`/v3/fixtures?id=${id}`),
     }),
+
+    getSinglePrediction: builder.query({
+      query: (fixtures) => createRequest(`/v3/predictions?fixture=${fixtures}`),
+    }),
+
+    getSingleCoach: builder.query({
+      query: (id) => createRequest(`/v3/coachs?team=${id}`),
+    }),
+
+    getTrophiesCoach: builder.query({
+      query: (coachs) => createRequest(`/v3/trophies?coach=${coachs}`),
+    }),
   }),
 });
 
@@ -78,4 +90,7 @@ export const {
   useGetTeamPlayersQuery,
   useGetFixturesQuery,
   useGetSingleFixtureQuery,
+  useGetSinglePredictionQuery,
+  useGetSingleCoachQuery,
+  useGetTrophiesCoachQuery,
 } = footballInfoApi;

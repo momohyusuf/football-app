@@ -592,6 +592,39 @@ dd {
     color: rgb(105, 105, 105);
   }
 }
+
+.predictions--advice--container {
+  font-family: $textFont;
+}
+.coach--info--container {
+  padding-top: 7em;
+  padding-inline: 1.5em;
+  p {
+    font-family: $textFont;
+  }
+  .career--container {
+    padding-top: 1em;
+    div {
+      padding-bottom: 0.5em;
+    }
+    img {
+      margin: 0.5em 0;
+    }
+  }
+}
+.coach--tab {
+  display: flex;
+  h4 {
+    margin: 0 1em;
+    padding-bottom: 0.3em;
+  }
+}
+.active--tab {
+  border-bottom: 2px solid red;
+}
+.trophy--container {
+  margin: 0.6em 0;
+}
 footer {
   width: 100%;
   padding: 2em 0;

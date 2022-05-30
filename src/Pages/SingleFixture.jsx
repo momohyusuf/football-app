@@ -5,6 +5,7 @@ import logo from '../preloader.png';
 import Details from '../Components/singleFeaturesComponents/Details';
 import Lineup from '../Components/singleFeaturesComponents/Lineup';
 import Statistics from '../Components/singleFeaturesComponents/Statistics';
+import Predictions from '../Components/singleFeaturesComponents/Predictions';
 
 export default function SingleFixture() {
   const [display, setDisplay] = useState('Details');
@@ -44,10 +45,19 @@ export default function SingleFixture() {
         >
           Statistics
         </li>
+        <li
+          className={`${
+            display === 'Predictions' ? 'active--fixture--btn' : null
+          }`}
+          onClick={currentValue}
+        >
+          Predictions
+        </li>
       </ul>
       {display === 'Details' && <Details data={data?.response} />}
       {display === 'Lineup' && <Lineup data={data?.response} />}
       {display === 'Statistics' && <Statistics data={data?.response} />}
+      {display === 'Predictions' && <Predictions fixtures={param.fixtureId} />}
     </section>
   );
 }

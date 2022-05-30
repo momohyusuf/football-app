@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Lineup({ data }) {
   if (data[0]?.lineups.length === 0) {
@@ -8,6 +9,7 @@ function Lineup({ data }) {
       </h3>
     );
   }
+
   return (
     <section className="teams--lineup">
       {data[0]?.lineups.map((info, index) => {
@@ -25,6 +27,7 @@ function Lineup({ data }) {
           margin: '5px',
           padding: '0.2em',
         };
+
         return (
           <article key={index}>
             <div className="teams--lineup--header">
@@ -35,8 +38,10 @@ function Lineup({ data }) {
               </p>
             </div>
             <div className="team--lineup--coach">
-              <img src={info.coach.photo} alt="" />
-              <p> {info.coach.name}</p>
+              <Link to={`${info.team.id}`}>
+                <img src={info.coach.photo} alt="" />
+                <p> {info.coach.name}</p>
+              </Link>
               <small>coach</small>
               <p>
                 <strong>Formation:</strong> {info.formation}
@@ -47,12 +52,14 @@ function Lineup({ data }) {
             {info?.startXI.map((player) => {
               return (
                 <div className="team--starting--xi" key={player.player.id}>
-                  <p>
-                    {' '}
-                    <span>{player.player.pos}</span>
-                    <span style={style}>{player.player.number}</span>
-                    {player.player.name}
-                  </p>
+                  <Link to={`/leagues/standingId/teamId/${player.player.id}`}>
+                    <p>
+                      {' '}
+                      <span>{player.player.pos}</span>
+                      <span style={style}>{player.player.number}</span>
+                      {player.player.name}
+                    </p>
+                  </Link>
                 </div>
               );
             })}
@@ -60,10 +67,14 @@ function Lineup({ data }) {
             {info?.substitutes.map((player) => {
               return (
                 <div className="team--substitutes" key={player.player.id}>
-                  <p>
-                    <span style={style}>{player.player.number}</span>
-                    {player.player.name}
-                  </p>
+                  <Link to={`/leagues/standingId/teamId/${player.player.id}`}>
+                    <p>
+                      {' '}
+                      <span>{player.player.pos}</span>
+                      <span style={style}>{player.player.number}</span>
+                      {player.player.name}
+                    </p>
+                  </Link>
                 </div>
               );
             })}

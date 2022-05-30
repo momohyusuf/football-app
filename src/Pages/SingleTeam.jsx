@@ -1,7 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { useGetTeamInformationQuery } from '../services/footballInfoApi';
+import { useParams, Link } from 'react-router-dom';
+import {
+  useGetTeamInformationQuery,
+  useGetSingleCoachQuery,
+} from '../services/footballInfoApi';
 import TeamStatistics from '../Components/TeamStatistics';
 import TeamPlayers from '../Components/TeamPlayers';
 import { MdLocationPin } from 'react-icons/md';
@@ -10,8 +13,8 @@ import logo from '../preloader.png';
 function SingleTeam() {
   const param = useParams();
   const { season } = useSelector((state) => state.season);
-
   const { data, isLoading } = useGetTeamInformationQuery(param.teamsId);
+  const { currentData } = useGetSingleCoachQuery(param.teamsId);
   if (isLoading) {
     return (
       <div className="preloader--container">
@@ -19,6 +22,7 @@ function SingleTeam() {
       </div>
     );
   }
+
   return (
     <section className="single--team--container">
       <div className="single--team--content">
@@ -42,7 +46,8 @@ function SingleTeam() {
                 Address: {information.venue.address}
                 <br />
                 City: {information.venue.city} <br />
-                Stadium: {information.venue.name}
+                Stadium: {information.venue.name} <br />
+                Capacity: {information.venue.capacity}
               </address>
               <img
                 className="single--team--stadium--image"
@@ -54,6 +59,10 @@ function SingleTeam() {
         })}
         <h3>Team Statistics</h3>
         <TeamStatistics season={season} iDs={param} />
+        <h5>Coach</h5>
+        <Link to={`/Fixtures/fixtureId/${param.teamsId}`}>
+          <p>{currentData?.response[0].name}</p>
+        </Link>
         <TeamPlayers season={season} iDs={param} />
       </div>
     </section>

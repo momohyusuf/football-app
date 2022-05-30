@@ -11,7 +11,12 @@ function TeamPlayers({ iDs }) {
       {data?.response[0]?.players.map((player) => {
         return (
           <Link to={`${player.id}`} key={player.id}>
-            <p>{player.name}</p>
+            <div>
+              {' '}
+              <span style={{ color: 'red' }}>{player.number}</span>{' '}
+              {player.name} <br />
+              <small>{player.position}</small>
+            </div>
           </Link>
         );
       })}

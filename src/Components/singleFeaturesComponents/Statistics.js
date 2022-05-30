@@ -1,8 +1,6 @@
 import React from 'react';
 
 function Statistics({ data }) {
-  console.log(data);
-
   return (
     <section className="stats--container">
       <div>
