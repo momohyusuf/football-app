@@ -534,6 +534,12 @@ dd {
     font-family: $textFont;
     color: rgb(136, 136, 136);
   }
+  .event--team {
+    @include flexItems;
+    img {
+      width: 17px;
+    }
+  }
 }
 .event--time {
   font-family: $listTextFont;
@@ -614,6 +620,7 @@ dd {
 }
 .coach--tab {
   display: flex;
+  cursor: pointer;
   h4 {
     margin: 0 1em;
     padding-bottom: 0.3em;
@@ -624,6 +631,7 @@ dd {
 }
 .trophy--container {
   margin: 0.6em 0;
+  border-bottom: 1px solid grey;
 }
 footer {
   width: 100%;

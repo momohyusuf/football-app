@@ -41,6 +41,7 @@ function Details({ data }) {
 
           <div className="events">
             {data[0]?.events.map((event, index) => {
+              console.log(event);
               return (
                 <div key={index}>
                   <article>
@@ -51,7 +52,10 @@ function Details({ data }) {
                       </span>
                       <span className="event--type"> {event.type}</span>
                     </div>
-                    <p>{event.player.name}</p>
+                    <div className="event--team">
+                      <img src={event.team.logo} alt="" />
+                      <p>{event.player.name}</p>
+                    </div>
                     <small>{event.detail}</small> <br />
                     <small>{event.comments}</small>
                   </article>
