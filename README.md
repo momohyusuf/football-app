@@ -16,13 +16,13 @@
 
 ## Overview
 
-This project was built to further enlighten my knowledge about making multiple calls from a Single Api that has multiple endpoints. And also to understand how data is structured in a database.
+This project was built to enlighten my knowledge about making multiple calls from a Single Api that has multiple endpoints. Also to understand how data is structured in a database.
 
 ### The Project Goal
 
 Users should be able to:
 1.Get latest football news
-2.Get football fixtures current live scores
+2.Get football fixtures and current live scores
 3.Get league standing
 4.Get team, players and coach information and stats
 4.get predictions
