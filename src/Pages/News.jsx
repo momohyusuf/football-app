@@ -17,7 +17,7 @@ function News({ first }) {
   return (
     <section className="news--section--container">
       {first && <h3>Football News</h3>}
-      {data?.value.slice(0, first ? 5 : 100).map((news, index) => (
+      {data?.value.slice(0, first ? 3 : 100).map((news, index) => (
         <article key={index} className="news--content">
           <img
             className="news--content--image"

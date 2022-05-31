@@ -3,7 +3,7 @@ import CountryLeagues from '../Components/CountryLeagues';
 import { useGetFootballInfoQuery } from '../services/footballInfoApi';
 import logo from '../preloader.png';
 
-function Leagues() {
+function Leagues({ first }) {
   const { data, isLoading } = useGetFootballInfoQuery();
   const [selectCountry, setSelectCountry] = useState({ country: 'World' });
 
@@ -22,7 +22,11 @@ function Leagues() {
   }
 
   return (
-    <section className="league--section--container">
+    <section
+      className="league--section--container"
+      style={{ paddingTop: `${first && '1em'}` }}
+    >
+      <h3>Leagues Around the World</h3>
       <label htmlFor="countries">Select a country</label>
       <select
         name="countries"
@@ -38,7 +42,7 @@ function Leagues() {
           );
         })}
       </select>
-      <CountryLeagues selectCountry={selectCountry} />
+      <CountryLeagues selectCountry={selectCountry} first={first} />
     </section>
   );
 }

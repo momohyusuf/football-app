@@ -61,7 +61,7 @@ function SingleTeam() {
         <TeamStatistics season={season} iDs={param} />
         <h5>Coach</h5>
         <Link to={`/Fixtures/fixtureId/${param.teamsId}`}>
-          <p>{currentData?.response[0].name}</p>
+          <p>{currentData?.response[0]?.name}</p>
         </Link>
         <TeamPlayers season={season} iDs={param} />
       </div>

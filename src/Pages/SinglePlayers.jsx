@@ -19,6 +19,7 @@ function SinglePlayers() {
       </div>
     );
   }
+
   if (data?.response.length === 0) {
     return (
       <h3 className="single--player--container">
@@ -51,9 +52,9 @@ function SinglePlayers() {
         <div>
           <p>
             {' '}
-            <strong>Club:</strong> <span>{statistics[value].team.name}</span>
+            <strong>Club:</strong> <span>{statistics[value]?.team?.name}</span>
           </p>
-          <img src={statistics[value].team.logo} alt="" />
+          <img src={statistics[value]?.team.logo} alt="" />
         </div>
 
         <p>
@@ -71,11 +72,11 @@ function SinglePlayers() {
         </p>
         <p>
           <strong>Season:</strong>
-          <span> {statistics[value].league.season}</span>
+          <span> {statistics[value]?.league.season}</span>
         </p>
 
         {/* ????????? */}
-        <section className="player--stats" key={statistics[value].league.id}>
+        <section className="player--stats" key={statistics[value]?.league.id}>
           <h3>Player Stats</h3>
           <section>
             {' '}
@@ -102,50 +103,50 @@ function SinglePlayers() {
               }
             />
             <p className="player--league--stats">
-              {statistics[value].league.name}
+              {statistics[value]?.league.name}
             </p>
             <dl>
               <dt>Games</dt>
-              <dd>Position: {statistics[value].games.position}</dd>
-              <dd>Appearance: {statistics[value].games.appearences}</dd>
-              <dd>Minuties: {statistics[value].games.minutes}</dd>
+              <dd>Position: {statistics[value]?.games.position}</dd>
+              <dd>Appearance: {statistics[value]?.games.appearences}</dd>
+              <dd>Minuties: {statistics[value]?.games.minutes}</dd>
               <dd>
                 Average Rating:{' '}
-                {parseInt(statistics[value].games.rating).toFixed(1)}
+                {parseInt(statistics[value]?.games.rating).toFixed(1)}
               </dd>
               <dt>Goals</dt>
-              <dd>Scored: {statistics[value].goals.total}</dd>
-              <dd>Conceded: {statistics[value].goals.conceded}</dd>
-              <dd>Assists: {statistics[value].goals.assists}</dd>
-              <dd>Saves: {statistics[value].goals.saves}</dd>
+              <dd>Scored: {statistics[value]?.goals.total}</dd>
+              <dd>Conceded: {statistics[value]?.goals.conceded}</dd>
+              <dd>Assists: {statistics[value]?.goals.assists}</dd>
+              <dd>Saves: {statistics[value]?.goals.saves}</dd>
               <dt>Passes</dt>
-              <dd>Total: {statistics[value].passes.total}</dd>
-              <dd>Accuracy: {statistics[value].passes.accuracy}%</dd>
-              <dd>Key Passes: {statistics[value].passes.key}</dd>
+              <dd>Total: {statistics[value]?.passes.total}</dd>
+              <dd>Accuracy: {statistics[value]?.passes.accuracy}%</dd>
+              <dd>Key Passes: {statistics[value]?.passes.key}</dd>
               <dt>Shots</dt>
-              <dd>Total: {statistics[value].shots.total}</dd>
-              <dd>On-Target: {statistics[value].shots.on}</dd>
+              <dd>Total: {statistics[value]?.shots.total}</dd>
+              <dd>On-Target: {statistics[value]?.shots.on}</dd>
               <dt>Tackles</dt>
-              <dd>Total: {statistics[value].tackles.total}</dd>
-              <dd>Blocks: {statistics[value].tackles.blocks}</dd>
-              <dd>Interceptions: {statistics[value].tackles.interceptions}</dd>
+              <dd>Total: {statistics[value]?.tackles.total}</dd>
+              <dd>Blocks: {statistics[value]?.tackles.blocks}</dd>
+              <dd>Interceptions: {statistics[value]?.tackles.interceptions}</dd>
               <dt>Substitutes</dt>
-              <dd>In: {statistics[value].substitutes.in}</dd>
-              <dd>Out: {statistics[value].substitutes.out}</dd>{' '}
-              <dd>Bench: {statistics[value].substitutes.bench}</dd>
+              <dd>In: {statistics[value]?.substitutes.in}</dd>
+              <dd>Out: {statistics[value]?.substitutes.out}</dd>{' '}
+              <dd>Bench: {statistics[value]?.substitutes.bench}</dd>
               <dt>Cards</dt>
-              <dd>Yellow: {statistics[value].cards.yellow}</dd>
-              <dd>Red: {statistics[value].cards.red}</dd>
+              <dd>Yellow: {statistics[value]?.cards.yellow}</dd>
+              <dd>Red: {statistics[value]?.cards.red}</dd>
               <dt>Dribbles</dt>
-              <dd>Attempts: {statistics[value].dribbles.attempts}</dd>
-              <dd>Success: {statistics[value].dribbles.success}</dd>
-              <dd>Failed: {statistics[value].dribbles.pasts}</dd>
+              <dd>Attempts: {statistics[value]?.dribbles.attempts}</dd>
+              <dd>Success: {statistics[value]?.dribbles.success}</dd>
+              <dd>Failed: {statistics[value]?.dribbles.pasts}</dd>
               <dt>Duels</dt>
-              <dd>Total: {statistics[value].duels.total}</dd>
-              <dd>Won: {statistics[value].duels.won}</dd>
+              <dd>Total: {statistics[value]?.duels.total}</dd>
+              <dd>Won: {statistics[value]?.duels.won}</dd>
               <dt>Fouls</dt>
-              <dd>Drawn: {statistics[value].fouls.drawn}</dd>
-              <dd>Comitted: {statistics[value].fouls.comitted}</dd>
+              <dd>Drawn: {statistics[value]?.fouls.drawn}</dd>
+              <dd>Comitted: {statistics[value]?.fouls.comitted}</dd>
             </dl>
           </section>
         </section>

@@ -5,6 +5,7 @@ import { useGetTeamSquadQuery } from '../services/footballInfoApi';
 function TeamPlayers({ iDs }) {
   const team = parseInt(iDs.teamsId);
   const { data } = useGetTeamSquadQuery(team);
+
   return (
     <div className="team--players">
       <h4 className="team--players--heading">Team Players</h4>

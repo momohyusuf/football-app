@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useGetFootballLeaguesQuery } from '../services/footballInfoApi';
 import logo from '../preloader.png';
 
-function CountryLeagues({ selectCountry }) {
+function CountryLeagues({ selectCountry, first }) {
   const { data, isLoading } = useGetFootballLeaguesQuery(selectCountry.country);
 
   if (isLoading) {
@@ -15,13 +15,19 @@ function CountryLeagues({ selectCountry }) {
   }
   return (
     <section className="league--section">
-      {data?.response.map((leagues) => {
+      {data?.response.slice(0, first ? 3 : 100).map((leagues) => {
         const {
           league: { id, name, type, logo },
         } = leagues;
-
+        function show(see) {
+          if (first) {
+            return 'leagues/' + see;
+          } else {
+            return see;
+          }
+        }
         return (
-          <Link to={`${id}`} key={id}>
+          <Link to={`${show(id)}`} key={id}>
             <article className="league--information--box">
               <img className="league--section--logo" src={logo} alt={name} />
               <h5 className="league--name">Name: {name}</h5>

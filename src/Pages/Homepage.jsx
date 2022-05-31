@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import News from './News';
 import Fixtures from './Fixtures';
+import Leagues from './Leagues';
 
 function Homepage() {
   const [first, setfirst] = useState(true);
@@ -12,6 +13,7 @@ function Homepage() {
             <h2>Football News</h2>
             <News first={first} />
             <Fixtures first={first} />
+            <Leagues first={first} />
           </article>
         </section>
       </main>

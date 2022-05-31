@@ -20,7 +20,7 @@ function SingleCoach() {
   function currentValue(e) {
     setCurrent(e.target.innerText);
   }
-  console.log(data.response[0]);
+
   return (
     <section className="coach--info--container">
       <img src={data?.response[0].photo} alt="" />

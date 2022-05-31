@@ -71,7 +71,14 @@ function Fixtures({ first }) {
         <h1>no fixture today for this country</h1>
       ) : (
         <article>
-          {trying.slice(0, first ? 5 : 100).map((fixtures) => {
+          {trying.slice(0, first ? 3 : 100).map((fixtures) => {
+            function show(see) {
+              if (first) {
+                return 'fixtures/' + see;
+              } else {
+                return see;
+              }
+            }
             return (
               <div key={fixtures.fixture.id}>
                 <div className="fixtures--header">
@@ -91,7 +98,7 @@ function Fixtures({ first }) {
                   </Link>
                 </div>
 
-                <Link to={`${fixtures.fixture.id}`}>
+                <Link to={`${show(fixtures.fixture.id)}`}>
                   <div className="fixtures--playing--team--container">
                     <div className="fixture--game--time">
                       <small>
