@@ -4,7 +4,7 @@ import logo from '../preloader.png';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
-function Fixtures() {
+function Fixtures({ first }) {
   const currentDate = new Date().getDate();
   const currentMonth = new Date().getMonth() + 1;
   const currentYear = new Date().getFullYear();
@@ -43,27 +43,35 @@ function Fixtures() {
   }
 
   return (
-    <section className="fixtures--section--container">
-      <input
-        type="date"
-        name="data"
-        id="date"
-        value={date}
-        onChange={handleInput}
-      />
-      <br />
-      <input
-        type="text"
-        name="search"
-        id="search"
-        placeholder="Search fixture by country name"
-        onChange={getFixturesBySearch}
-      />
+    <section
+      style={{ paddingTop: `${first && '1em'}` }}
+      className="fixtures--section--container"
+    >
+      {first && <h3>Livescores and fixtures</h3>}
+      {!first && (
+        <>
+          <input
+            type="date"
+            name="data"
+            id="date"
+            value={date}
+            onChange={handleInput}
+          />
+          <br />
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search fixture by country name"
+            onChange={getFixturesBySearch}
+          />
+        </>
+      )}
       {trying.length === 0 ? (
         <h1>no fixture today for this country</h1>
       ) : (
         <article>
-          {trying.map((fixtures) => {
+          {trying.slice(0, first ? 5 : 100).map((fixtures) => {
             return (
               <div key={fixtures.fixture.id}>
                 <div className="fixtures--header">

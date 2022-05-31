@@ -1,12 +1,16 @@
 import React from 'react';
 
 import { NavLink } from 'react-router-dom';
+import image from '../logo.png';
 
 function Navbar() {
   return (
     <nav className="nav--bar">
       {' '}
-      <p>Sport O'clock</p>
+      <div>
+        <p>Football O'clock</p>
+        <img src={image} alt="logo" className="logo" />
+      </div>
       <ul>
         <li>
           <NavLink to="news">News</NavLink>

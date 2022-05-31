@@ -10,7 +10,6 @@
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -22,7 +21,7 @@ This project was built to further enlighten my knowledge about making multiple c
 
 Users should be able to:
 1.Get latest football news
-2.Get football fixtures current live scores
+2.Get football fixtures and current live scores
 3.Get league standing
 4.Get team, players and coach information and stats
 4.get predictions
@@ -54,7 +53,7 @@ This project was built with the following tools
 
 ### What I learn
 
-learnt how to make use different endpoints to make calls from a single API
+learnt how to use different endpoints to make calls from a single API
 learnt page routing using react-router-dom
 learnt how to successfully use Reduxtoolkit query for making api calls
 broaden my knowledge on Algorithms and Data structure.

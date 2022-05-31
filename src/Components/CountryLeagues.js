@@ -13,7 +13,6 @@ function CountryLeagues({ selectCountry }) {
       </div>
     );
   }
-
   return (
     <section className="league--section">
       {data?.response.map((leagues) => {

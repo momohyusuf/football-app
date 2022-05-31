@@ -41,7 +41,6 @@ function Details({ data }) {
 
           <div className="events">
             {data[0]?.events.map((event, index) => {
-              console.log(event);
               return (
                 <div key={index}>
                   <article>

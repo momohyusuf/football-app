@@ -5,7 +5,7 @@ import logo from '../preloader.png';
 
 function Leagues() {
   const { data, isLoading } = useGetFootballInfoQuery();
-  const [selectCountry, setSelectCountry] = useState({ country: 'England' });
+  const [selectCountry, setSelectCountry] = useState({ country: 'World' });
 
   if (isLoading) {
     return (

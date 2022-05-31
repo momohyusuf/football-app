@@ -3,7 +3,7 @@ import { useGetFootballNewsQuery } from '../services/footballNewsApi';
 import moment from 'moment';
 import logo from '../preloader.png';
 
-function News() {
+function News({ first }) {
   const { isLoading, data } = useGetFootballNewsQuery();
 
   if (isLoading) {
@@ -16,7 +16,8 @@ function News() {
 
   return (
     <section className="news--section--container">
-      {data?.value.map((news, index) => (
+      {first && <h3>Football News</h3>}
+      {data?.value.slice(0, first ? 5 : 100).map((news, index) => (
         <article key={index} className="news--content">
           <img
             className="news--content--image"
