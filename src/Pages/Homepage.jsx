@@ -19,7 +19,8 @@ function Homepage() {
       </main>
       <footer>
         <p>
-          <span>&copy;</span> Starkweb Technologies <br /> starkweb2@gmail.com
+          <span>&copy;</span> 2022 Starkweb Technologies <br />{' '}
+          <small> starkweb2@gmail.com</small>
         </p>
       </footer>
     </>
