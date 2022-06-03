@@ -24,7 +24,7 @@ function Leagues({ first }) {
   return (
     <section
       className="league--section--container"
-      style={{ paddingTop: `${first && '1em'}` }}
+      style={{ paddingTop: `${first && '3em'}` }}
     >
       <h2>Leagues Around the World</h2>
       <label htmlFor="countries">Select a country</label>
