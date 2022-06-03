@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useGetFixturesQuery } from '../services/footballInfoApi';
 import logo from '../preloader.png';
 import moment from 'moment';

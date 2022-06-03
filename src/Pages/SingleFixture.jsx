@@ -26,6 +26,14 @@ export default function SingleFixture() {
     <section className="single--fixture--container">
       <ul className="single--fixture--nav">
         <li
+          className={`${
+            display === 'Predictions' ? 'active--fixture--btn' : null
+          }`}
+          onClick={currentValue}
+        >
+          Predictions
+        </li>
+        <li
           className={`${display === 'Details' ? 'active--fixture--btn' : null}`}
           onClick={currentValue}
         >
@@ -44,14 +52,6 @@ export default function SingleFixture() {
           onClick={currentValue}
         >
           Statistics
-        </li>
-        <li
-          className={`${
-            display === 'Predictions' ? 'active--fixture--btn' : null
-          }`}
-          onClick={currentValue}
-        >
-          Predictions
         </li>
       </ul>
       {display === 'Details' && <Details data={data?.response} />}
