@@ -47,7 +47,7 @@ function Fixtures({ first }) {
       style={{ paddingTop: `${first && '1em'}` }}
       className="fixtures--section--container"
     >
-      {first && <h3>Livescores and fixtures</h3>}
+      {first && <h2>Livescores and fixtures</h2>}
       {!first && (
         <>
           <input

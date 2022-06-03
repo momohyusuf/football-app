@@ -116,10 +116,13 @@ body {
   height: 100%;
   padding-top: 7em !important;
   padding-inline: 1em;
-  @include mainContainer;
   @media screen and (min-width: 800px) {
     padding-inline: 5em;
   }
+}
+.news--container {
+  padding-top: 0.5em !important;
+  @include mainContainer;
 }
 .news--section--container p {
   font-family: $textFont;
@@ -389,7 +392,10 @@ dd {
 // //////////////
 .fixtures--section--container {
   padding-top: 10em;
-  padding-inline: 1.5em;
+  padding-inline: 1em;
+  @media screen and (min-width: 800px) {
+    padding-inline: 5em;
+  }
   font-family: $listTextFont;
   input {
     padding: 0.5em 1em;

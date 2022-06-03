@@ -10,10 +10,9 @@ function Homepage() {
       <main>
         <section className="homepage--content--container">
           <article className="news--section">
-            <h2>Football News</h2>
             <News first={first} />
-            <Fixtures first={first} />
             <Leagues first={first} />
+            <Fixtures first={first} />
           </article>
         </section>
       </main>

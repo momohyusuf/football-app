@@ -14,7 +14,7 @@ function Lineup({ data }) {
     <section className="teams--lineup">
       {data[0]?.lineups.map((info, index) => {
         if (info.formation === null) {
-          return <p>Sorry no info yet</p>;
+          return <p key={index}>Sorry no info yet</p>;
         }
         const {
           team: {
