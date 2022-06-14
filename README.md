@@ -51,8 +51,8 @@ Users should be able to:
 
 ### Continued development
 
-still learning JavaScript and solidifying my Css Knowlegde
-also looking to futher improve my knowelegde on React
+- still learning JavaScript and solidifying my Css Knowlegde
+- improving my knowelegde on React
 
 
 ### Useful resources
