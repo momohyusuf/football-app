@@ -26,7 +26,7 @@ Users should be able to:
 - view leagues by country.
 - view league information by season, current table standing, top scorers and assist, team players and individual stats.
 ### Links
-- Live Site URL: [Add live site URL here](https://football-oclock.netlify.app)
+- Live Site URL: [footbal-oclock](https://football-oclock.netlify.app)
 
 ## My process
 
