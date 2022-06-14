@@ -1,75 +1,66 @@
-# Work in Progress
-
-# A football Web App
+# A Football App ⚽
 
 ## Table of contents
 
 - [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
+
 ## Overview
 
-This project was built to enlighten my knowledge about making multiple calls from a Single Api that has multiple endpoints. Also to understand how data is structured in a database.
-
-### The Project Goal
+### The objective
 
 Users should be able to:
-1.Get latest football news
-2.Get football fixtures and current live scores
-3.Get league standing
-4.Get team, players and coach information and stats
-4.get predictions
 
+- View current football news around the world.
+- view livescores, fixtures, match stats, predictions and lineup.
+- view leagues by country.
+- view league information by season, current table standing, top scorers and assist, team players and individual stats.
 ### Links
-
-Website link [https://football-oclock.netlify.app/]
+- Live Site URL: [Add live site URL here](https://football-oclock.netlify.app)
 
 ## My process
 
-this project was mainly for mobile phone usage it is also responsive across all devices, but the styling looks so much on mobile devices
-
 ### Built with
-
-This project was built with the following tools
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Redux @reduxtoolkit]
-- [moments]
-- [scss]
-- Api's ['https://api-football-v1.p.rapidapi.com', https://bing-news-search1.p.rapidapi.com']
+- React
+- Redux toolkit
+- Moment library
+- Apis ['https://api-football-v1.p.rapidapi.com', https://bing-news-search1.p.rapidapi.com']
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
-### What I learn
 
-learnt how to use different endpoints to make calls from a single API
-learnt page routing using react-router-dom
-learnt how to successfully use Reduxtoolkit query for making api calls
-broaden my knowledge on Algorithms and Data structure.
-also made improvement in my understanding of scss.
+
+### What I learned
+- leant how to work with react and redux toolkit
+- learnt how to use the redux toolkit query to make multiple calls
+- broaden my knowlegde on how a data base is structured and how to come up with multiple error handling code in other to prevent the website from breaking in the event of any modification to the database
 
 ### Continued development
 
-Will focus more in data-structure, scss, react and javascript.
-also will look to improve in my variables naming to increase better code readability
+still learning JavaScript and solidifying my Css Knowlegde
+also looking to futher improve my knowelegde on React
+
+
+### Useful resources
+React official documentation,
+Redux official documentation
+Rapid Api hub
 
 ## Author
+- Momoh Yusuf
+- Website - [starkweb](https://www.starkwebb.netlify.app)
 
-- Twitter - [@starkweb911](https://www.twitter.com/@starkweb911)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-want to say a big thank you to Football api 'https://api-football-v1.p.rapidapi.com', for providing such a large database for usage.
