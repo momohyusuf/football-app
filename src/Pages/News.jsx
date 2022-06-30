@@ -19,7 +19,7 @@ function News({ first }) {
       <section className="news--section--container">
         {first && <h2 className="football--news--heading">Football News</h2>}
         <div className="news--container">
-          {data?.value.slice(0, first ? 3 : 100).map((news, index) => (
+          {data?.value.slice(0, first ? 6 : 100).map((news, index) => (
             <article key={index} className="news--content">
               <img
                 className="news--content--image"
