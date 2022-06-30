@@ -15,7 +15,7 @@ function CountryLeagues({ selectCountry, first }) {
   }
   return (
     <section className="league--section">
-      {data?.response.slice(0, first ? 3 : 100).map((leagues) => {
+      {data?.response.slice(0, first ? 6 : 100).map((leagues) => {
         const {
           league: { id, name, type, logo },
         } = leagues;
