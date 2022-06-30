@@ -71,7 +71,7 @@ function Fixtures({ first }) {
         <h1>no fixture today for this country</h1>
       ) : (
         <article>
-          {trying.slice(0, first ? 3 : 100).map((fixtures) => {
+          {trying.slice(0, first ? 6 : 100).map((fixtures) => {
             function show(see) {
               if (first) {
                 return 'fixtures/' + see;
